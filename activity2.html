@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وفاء وعرفان - جبهة القوى الديمقراطية</title>
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --accent-green: #8bc34a;
+            --white: #ffffff;
+            --bg-gray: #f0f2f5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--bg-gray); color: #333; line-height: 1.8; }
+
+        header {
+            background: var(--primary-green);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-btn { color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+
+        .main-content {
+            max-width: 850px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .date-tag { color: var(--accent-green); font-size: 0.85rem; font-weight: bold; }
+        h1 { color: var(--primary-green); font-size: 1.7rem; margin: 10px 0 20px; line-height: 1.4; }
+
+        /* معرض الصور: 2 تصاور وحدة حدا وحدة */
+        .whatsapp-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 25px 0;
+            background: #e5ddd5;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .whatsapp-gallery img {
+            width: 100%;
+            height: 250px; 
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .article-body { 
+            font-size: 1.15rem; 
+            text-align: justify; 
+            color: #444; 
+            margin-top: 20px;
+        }
+
+        .article-body p { margin-bottom: 20px; }
+
+        footer { text-align: center; padding: 30px; color: #888; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn"> → رجوع للرئيسية</a>
+        <img src="https://pffd.ma/wp-content/uploads/2025/04/logo-web-site.png" alt="Logo" style="height: 45px;">
+    </header>
+
+    <main class="main-content">
+        <span class="date-tag">الخميس 2 أكتوبر 2025</span>
+        <h1>وفد حزب جبهة القوى الديمقراطية يترحم على روح جلالة المغفور له الملك الحسن الثاني بضريح محمد الخامس</h1>
+
+        <div class="whatsapp-gallery">
+            <img src="adds.jpeg" alt="زيارة الضريح 1">
+            <img src="mmlo.jpeg" alt="زيارة الضريح 2">
+        </div>
+
+        <div class="article-body">
+            <p>قام وفد عن حزب جبهة القوى الديمقراطية، يتقدمه الأمين العام للحزب، صباح يوم الخميس 9 ربيع الآخر 1447 هـ الموافق 2 أكتوبر 2025، بزيارة إلى ضريح محمد الخامس بالرباط، لقراءة الفاتحة والترحم على روحي جلالتي المغفور لهما الملك محمد الخامس، أب الأمة وباعث استقلال المغرب، والملك الحسن الثاني، موحد البلاد ومبدع المسيرة الخضراء المظفرة، وذلك بمناسبة الذكرى السابعة والعشرين لرحيل هذا الأخير.</p>
+
+            <p>وقد عبّر الأمين العام، في كلمة بالمناسبة، عن ما يكنّه مناضلو ومناضلات الحزب من تقدير وإجلال لمسار ملكين عظيمين، رسّخا دعائم الدولة المغربية الحديثة، وأسهما في بناء نهضتها وتعزيز إشعاعها الدولي. كما دعا بالرحمة والمغفرة لهما، وبأن يجعلهما الله تعالى في أعلى عليين مع النبيئين والصديقين والشهداء والصالحين.</p>
+
+            <p>وقد التُقطت بهذه المناسبة صور تؤرخ للحظة وفاء وعرفان لروحي فقيدي الأمة، وتجديد للعهد على مواصلة التعبئة وراء جلالة الملك محمد السادس، حفاظاً على الوحدة الوطنية وصيانةً لمكتسبات الوطن.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>جبهة القوى الديمقراطية - الأمانة الإقليمية الفداء مرس السلطان</p>
+    </footer>
+
+</body>
+</html>

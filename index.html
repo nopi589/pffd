@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جبهة القوى الديمقراطية - الفداء مرس السلطان</title>
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --accent-green: #8bc34a;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+            --text-dark: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--light-gray); color: var(--text-dark); overflow-x: hidden; }
+
+        header {
+            position: absolute; top: 0; left: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; z-index: 1000; background: transparent;
+        }
+
+        .logo-container { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 5px; }
+        .main-logo { height: 80px; width: auto; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5)); }
+        
+        .logo-text h1 { 
+            color: var(--white); font-size: 1.1rem; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4); line-height: 1.2; 
+        }
+        .logo-text span { color: var(--accent-green); font-size: 0.8rem; font-weight: bold; }
+
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { text-decoration: none; color: var(--white); font-weight: 600; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent-green); }
+
+        .hero {
+            position: relative; height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: var(--white); overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://pffd.ma/wp-content/uploads/2025/04/Frame-2.png');
+            background-size: cover; background-position: center;
+            filter: blur(8px); transform: scale(1.1); z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(45, 90, 39, 0.7), rgba(0, 0, 0, 0.5));
+            z-index: 2;
+        }
+        .hero-content { position: relative; z-index: 3; padding: 0 20px; }
+        .hero-content h2 { font-size: 4rem; margin-bottom: 20px; text-shadow: 2px 4px 10px rgba(0,0,0,0.3); }
+        
+        .btn-main {
+            display: inline-block; background-color: var(--accent-green); color: var(--white);
+            padding: 15px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s;
+        }
+
+        /* --- تعديل قسم الأمين الإقليمي --- */
+        .leader-section { padding: 80px 0; background: var(--white); display: flex; justify-content: center; }
+        
+        .leader-card {
+            max-width: 450px; width: 92%; 
+            display: flex; flex-direction: column; align-items: center; text-align: center; 
+            padding: 40px 20px;
+            border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.06); border: 1px solid #eee;
+        }
+        
+        .leader-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 6px solid var(--light-gray); background: #eee;}
+
+        .leader-title {
+            color: var(--accent-green); font-weight: bold; font-size: 1rem;
+            display: block; margin-bottom: 5px;
+        }
+
+        .leader-card h3 { color: var(--primary-green); font-size: 1.7rem; margin-bottom: 10px; }
+        /* ------------------------------- */
+
+        .container { width: 85%; margin: 80px auto; }
+        .section-title { font-size: 2.2rem; color: var(--primary-green); margin-bottom: 50px; border-right: 8px solid var(--accent-green); padding-right: 20px;}
+        
+        .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
+        .activity-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.4s; text-decoration: none; color: inherit; display: block; }
+        .activity-card:hover { transform: translateY(-12px); }
+        .activity-card img.main-img { width: 100%; height: 260px; object-fit: cover; }
+        
+        .double-img { display: grid; grid-template-columns: 1fr 1fr; height: 260px; gap: 2px; }
+        .double-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .activity-info { padding: 25px; }
+        .activity-info h4 { color: var(--primary-green); font-size: 1.3rem; margin-bottom: 10px; }
+
+        .activity-info p { 
+            color: #666; font-size: 0.9rem; line-height: 1.6;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;  
+            overflow: hidden; text-overflow: ellipsis; 
+        }
+
+        footer { background: var(--primary-green); color: var(--white); padding: 50px 5%; text-align: center; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 20px; position: relative; background: var(--primary-green); }
+            .hero { height: 60vh; }
+            .hero-content h2 { font-size: 2.5rem; }
+            .nav ul { gap: 15px; margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://pffd.ma/wp-content/uploads/2025/04/logo-web-site.png" alt="PFFD Logo" class="main-logo">
+            <div class="logo-text">
+                <h1>جبهة القوى الديمقراطية</h1>
+                <span>الأمانة الإقليمية - الفداء مرس السلطان</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="gallery.html">معرض الصور</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>مغرب واحد للجميع</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 40px;">من أجل تنمية محلية شاملة في منطقة الفداء مرس السلطان</p>
+            <a href="#activities" class="btn-main">اكتشف آخر المستجدات</a>
+        </div>
+    </section>
+
+   <section class="leaders-container">
+        <div class="leaders-row">
+            
+            <div class="leader-card">
+                <div class="card-border-top"></div>
+                <img src="67.jpeg" alt="التهامي الخياري" class="leader-img">
+                <span class="leader-title">القائد المؤسس</span>
+                <h3>المرحوم التهامي الخياري</h3>
+                <p>المرجعية الفكرية والنضالية للحزب، وأحد أعمدة السياسة المغربية الذين كرسوا حياتهم لخدمة الوطن.</p>
+            </div>
+
+            <div class="leader-card">
+                <div class="card-border-top"></div>
+                <img src="https://i1.hespress.com/wp-content/uploads/2024/10/El-Mustapha-Benali-front-des-forces-democratiques-Sawab-mauritanie.jpg" alt="المصطفى بنعلي" class="leader-img">
+                <span class="leader-title">الأمين العام</span>
+                <h3>د. المصطفى بنعلي</h3>
+                <p>يقود مسيرة التجديد داخل الحزب برؤية تهدف لبناء دولة اجتماعية ديمقراطية تخدم المواطن.</p>
+            </div>
+
+            <div class="leader-card">
+                <div class="card-border-top"></div>
+                <img src="WhatsApp_Image_2026-02-18_at_14.46.46-removebg-preview.png" alt="خالد بهموت" class="leader-img">
+                <span class="leader-title">الأمين الإقليمي</span>
+                <h3>الأستاذ خالد بهموت</h3>
+                <p>مؤطر العمل الميداني بالفداء مرس السلطان والقائم على تنفيذ سياسة القرب مع الساكنة.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+        /* ستايل خاص بقسم القيادة بالعرض */
+        .leaders-container {
+            padding: 60px 5%;
+            background-color: #fff;
+        }
+
+        .leaders-row {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap; /* باش فالتليفون يهبطو لتحت */
+        }
+
+        .leader-card {
+            background: #f9f9f9;
+            flex: 1;
+            min-width: 300px;
+            max-width: 380px;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-green);
+        }
+
+        .card-border-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-green);
+        }
+
+        .leader-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .leader-title {
+            display: block;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .leader-card h3 {
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .leader-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* تعديل خاص للتليفونات الصغيرة */
+        @media (max-width: 768px) {
+            .leaders-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .leader-card {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <div class="container" id="activities">
+        <h2 class="section-title">آخر الأنشطة والمستجدات</h2>
+        <div class="activities-grid">
+            
+            <a href="activity1.html" class="activity-card">
+                <img src="What.jpeg" class="main-img" alt="IMAGE">
+                <div class="activity-info">
+                    <span style="color: var(--accent-green); font-weight: bold;">19 فبراير 2026</span>
+                    <h4>في إطار سياسة القرب: الأمانة الإقليمية للفداء مرس السلطان تنظم لقاءً تواصلياً مفتوحاً مع الساكنة</h4>
+                    <p>في خطوة تجسد شعار "مغرب واحد للجميع" وترجمته على أرض الواقع، نظمت الأمانة الإقليمية لحزب جبهة القوى الديمقراطية بمنطقة الفداء مرس السلطان، لقاءً تواصلياً مفتوحاً مع ساكنة المنطقة، ترأسه الأمين الإقليمي الأستاذ خالد بهموت...</p>
+                </div>
+            </a>
+
+            <a href="activity2.html" class="activity-card">
+                <img src="adds.jpeg" class="main-img" alt="الميثاق">
+                <div class="activity-info">
+                    <span style="color: var(--accent-green); font-weight: bold;">15 فبراير 2026</span>
+                    <h4>وفد حزب جبهة القوى الديمقراطية يترحم على روح جلالة المغفور له الملك الحسن الثاني بضريح محمد الخامس.</h4>
+                    <p>قام وفد عن حزب جبهة القوى الديمقراطية، يتقدمه الأمين العام للحزب، بزيارة إلى ضريح محمد الخامس بالرباط لقراءة الفاتحة والترحم...</p>
+                </div>
+            </a>
+
+            <a href="activity3.html" class="activity-card">
+                <img src="96887544.jpeg" class="main-img" alt="اجتماع">
+                <div class="activity-info">
+                    <span style="color: var(--accent-green); font-weight: bold;">10 فبراير 2026</span>
+                    <h4>تعبئة شاملة بالفداء مرس السلطان: الأمانة الإقليمية تضع آخر الترتيبات للقاء تواصلي بارز</h4>
+                    <p>عقدت الأمانة الإقليمية لحزب جبهة القوى الديمقراطية فرع الفداء مرس السلطان اجتماعًا تنظيميًا لتدارس الإعداد للقاء التواصلي المرتقب...</p>
+                </div>
+            </a>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 جبهة القوى الديمقراطية - الامانة الإقليمية الفداء مرس السلطان</p>
+    </footer>
+
+</body>
+</html>

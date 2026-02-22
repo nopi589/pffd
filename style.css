@@ -1,0 +1,12 @@
+.activity-info p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            
+            /* هاد الجزء هو اللي كيدير السحر */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* هنا كتقول ليه حبس فـ السطر الثالث */
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            text-overflow: ellipsis; /* كيزيد 3 ديال النقط ... */
+        }

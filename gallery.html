@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الصور - جبهة القوى الديمقراطية</title>
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --accent-green: #8bc34a;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+            --text-dark: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--light-gray); color: var(--text-dark); }
+
+        header {
+            background-color: var(--primary-green);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .logo-area { color: var(--white); text-align: center; }
+        .logo-area h1 { font-size: 1.2rem; }
+        
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { text-decoration: none; color: var(--white); font-weight: 500; }
+        nav ul li a:hover { color: var(--accent-green); }
+
+        .container { width: 90%; max-width: 1200px; margin: 60px auto; }
+        
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .page-header h2::after {
+            content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 4px; background: var(--accent-green);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+
+        .img-wrapper { width: 100%; height: 250px; overflow: hidden; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover .img-wrapper img { transform: scale(1.1); }
+
+        .img-info { padding: 15px; text-align: center; min-height: 80px; display: flex; align-items: center; justify-content: center; }
+        .img-info p { font-weight: 600; color: var(--primary-green); font-size: 0.95rem; line-height: 1.4; }
+
+        footer { background: var(--primary-green); color: var(--white); padding: 40px; text-align: center; margin-top: 80px; }
+
+        @media (max-width: 768px) {
+            .page-header h2 { font-size: 2rem; }
+            header { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>جبهة القوى الديمقراطية</h1>
+            <small>الفداء مرس السلطان</small>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>معرض الصور</h2>
+            <p style="margin-top: 10px; color: #666;">ألبوم يوثق اللقاءات الميدانية والأنشطة الإقليمية</p>
+        </div>
+
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0011.jpeg" alt="دعوة تخليد الذكرى 27"></div>
+                <div class="img-info"><p>دعوة رسمية لتخليد الذكرى 27 لتأسيس الحزب تحت شعار "جبهة بروح المسيرة ونبض الدولة الاجتماعية"</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0012.jpeg" alt="لقاء الأطر"></div>
+                <div class="img-info"><p>تواصل مستمر بين قيادة الحزب وأطر الأمانة الإقليمية بالفداء مرس السلطان</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0000.jpeg" alt="لقاء"></div>
+                <div class="img-info"><p>أطر الأمانة الإقليمية في لقاء تواصلي</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0001.jpeg" alt="كلمة"></div>
+                <div class="img-info"><p>كلمة توجيهية خلال فعاليات الحزب</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0002.jpeg" alt="الأمانة"></div>
+                <div class="img-info"><p>الأمين العام د. المصطفى بنعلي رفقة الأمين الإقليمي أ. خالد بهموت</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0003.jpeg" alt="ساكنة"></div>
+                <div class="img-info"><p>تجاوب منقطع النظير لساكنة المنطقة مع نداء الحزب</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0004.jpeg" alt="صحافة"></div>
+                <div class="img-info"><p>تواصل إعلامي لتنوير الرأي العام المحلي</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0005.jpeg" alt="الحي الحسني"></div>
+                <div class="img-info"><p>تلبية دعوة الأمانة الإقليمية للحي الحسني: تعزيز لأواصر العمل الحزبي المشترك</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0006.jpeg" alt="تأسيس"></div>
+                <div class="img-info"><p>تخليد الذكرى 27 لتأسيس حزب جبهة القوى الديمقراطية</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0007.jpeg" alt="أسرة"></div>
+                <div class="img-info"><p>لقاء أسرة الحزب بالفداء مرس السلطان</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0008.jpeg" alt="اجتماع"></div>
+                <div class="img-info"><p>أشغال اجتماع اللجنة الإقليمية لتنظيم العمل الميداني</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="img-wrapper"><img src="0009.jpeg" alt="تعبئة"></div>
+                <div class="img-info"><p>تعبئة شاملة لمناضلي ومناضلات الحزب بمقر الأمانة الإقليمية</p></div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 جبهة القوى الديمقراطية - الامانة الاقليمية الفداء مرس السلطان</p>
+    </footer>
+
+</body>
+</html>
