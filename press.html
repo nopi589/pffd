@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بلاغات الحزب - جبهة القوى الديمقراطية</title>
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --accent-green: #8bc34a;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+            --text-dark: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--light-gray); color: var(--text-dark); }
+
+        header {
+            background: var(--primary-green);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container { width: 90%; max-width: 1200px; margin: 60px auto; }
+        .section-title { 
+            font-size: 2.2rem; 
+            color: var(--primary-green); 
+            margin-bottom: 40px; 
+            border-right: 8px solid var(--accent-green); 
+            padding-right: 15px; 
+        }
+
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 350px));
+            gap: 30px;
+        }
+
+        .press-card {
+            background: var(--white);
+            aspect-ratio: 1 / 1; /* المربع السحري */
+            border-radius: 20px;
+            overflow: hidden; /* باش الصورة ما تخرجش على الجناب */
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: 0.3s ease;
+            position: relative;
+        }
+
+        .press-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        /* الجزء العلوي: الصورة */
+        .press-img-box {
+            height: 60%; /* الصورة كتاخد 60% من المربع */
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .press-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* كتحافظ على تناسق الصورة */
+            transition: 0.5s;
+        }
+
+        .press-card:hover .press-img-box img {
+            transform: scale(1.1);
+        }
+
+        /* الجزء السفلي: العنوان */
+        .press-info {
+            height: 40%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
+            border-top: 4px solid var(--accent-green);
+        }
+
+        .press-info span {
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .press-info h3 {
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        footer { 
+            background: var(--primary-green); 
+            color: white; 
+            padding: 25px; 
+            text-align: center; 
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .press-grid { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <img src="https://pffd.ma/wp-content/uploads/2025/04/logo-web-site.png" height="50">
+            <h2 style="font-size: 1.1rem;">بلاغات الحزب</h2>
+        </div>
+        <a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">الرئيسية</a>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">البلاغات الرسمية</h2>
+
+        <div class="press-grid">
+            
+            <a href="press-release-1.html" class="press-card">
+                <div class="press-img-box">
+                    <img src="https://pffd.ma/wp-content/uploads/2025/09/557448836_1302142368614815_9055609746217363620_n-540x454.jpg" alt="بلاغ الحزب">
+                </div>
+                <div class="press-info">
+                    <span>28 فبراير 2026</span>
+                    <h3>بلاغ صادر عن الاجتماع الدوري للمكتب السياسي</h3>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 جبهة القوى الديمقراطية - التواصل المؤسساتي</p>
+    </footer>
+
+</body>
+</html>
