@@ -16,80 +16,33 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
         body { background-color: var(--light-gray); color: var(--text-dark); overflow-x: hidden; }
 
-        /* --- الهيدر الذكي --- */
         header {
-            position: relative; /* مهم للموبايل باش ما يتزاحمش */
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 5%;
-            z-index: 1000;
-            background: var(--primary-green); /* خلفية ثابتة فالموبايل للوضوح */
+            position: absolute; top: 0; left: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; z-index: 1000; background: transparent;
         }
 
-        .header-controls {
-            width: 100%;
-            display: flex;
-            justify-content: space-between; /* المنيو فجهة والزر فجهة */
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .portal-btn {
-            background: var(--accent-green);
-            color: var(--primary-green) !important;
-            padding: 6px 14px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.75rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            white-space: nowrap;
-        }
-
-        .menu-icon { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-        .menu-icon span { width: 30px; height: 3px; background-color: var(--white); border-radius: 2px; }
+        .menu-icon { display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 3001; }
+        .menu-icon span { width: 30px; height: 3px; background-color: var(--white); border-radius: 2px; box-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
 
         .logo-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .main-logo { height: 80px; width: auto; filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3)); }
-        .logo-text h1 { color: var(--white); font-size: 1.1rem; }
+        .main-logo { height: 85px; width: auto; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5)); }
+        .logo-text h1 { color: var(--white); font-size: 1.1rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.4); }
         .logo-text span { color: var(--accent-green); font-size: 0.8rem; font-weight: bold; }
 
-        /* تعديلات للبيسي (Desktop) */
-        @media (min-width: 769px) {
-            header {
-                position: absolute; /* رجوع للوضع الأصلي فـ البيسي */
-                background: transparent;
-                padding: 30px 5%;
-            }
-            .header-controls {
-                position: absolute;
-                right: 5%;
-                top: 45px;
-                width: auto;
-                justify-content: flex-end;
-                gap: 15px;
-            }
-            .main-logo { height: 110px; }
-            .logo-text h1 { font-size: 1.3rem; }
-            .portal-btn { font-size: 0.85rem; padding: 8px 18px; }
-        }
-
-        /* المنيو الجانبية */
+        /* ستايل المنيو الجانبي */
         #sideNav {
             position: fixed; top: 0; right: -280px; width: 280px; height: 100%;
             background: var(--primary-green); padding-top: 80px;
             transition: 0.4s ease-in-out; z-index: 3000;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
         }
         #sideNav.active { right: 0; }
         #sideNav ul { list-style: none; padding: 30px; }
         #sideNav ul li { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-        #sideNav ul li a { text-decoration: none; color: var(--white); font-size: 1.1rem; font-weight: 600; }
+        #sideNav ul li a { text-decoration: none; color: var(--white); font-size: 1.1rem; font-weight: 600; transition: 0.3s; }
+        #sideNav ul li a:hover { color: var(--accent-green); }
         .close-btn { position: absolute; top: 20px; left: 20px; font-size: 40px; color: var(--white); cursor: pointer; }
 
-        /* Hero Section */
         .hero {
             position: relative; height: 100vh;
             display: flex; align-items: center; justify-content: center;
@@ -98,48 +51,48 @@
         .hero-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('https://pffd.ma/wp-content/uploads/2025/04/Frame-2.png');
-            background-size: cover; background-position: center; filter: blur(3px); z-index: 1;
+            background-size: cover; background-position: center; filter: blur(5px); z-index: 1;
         }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.55); z-index: 2; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2; }
         .hero-content { position: relative; z-index: 3; padding: 0 20px; }
-        .hero-content h2 { font-size: 2.2rem; margin-bottom: 15px; } /* حجم مناسب للموبايل */
+        .hero-content h2 { font-size: 3.5rem; margin-bottom: 20px; }
 
-        @media (min-width: 769px) {
-            .hero-content h2 { font-size: 3.5rem; }
-        }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+        .btn-main { display: inline-block; background-color: var(--accent-green); color: var(--primary-green); padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; border: 2px solid var(--accent-green); }
+        .btn-main:hover { background-color: transparent; color: var(--white); border-color: var(--white); }
+        .btn-outline { display: inline-block; background-color: transparent; color: var(--white); padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; border: 2px solid var(--white); }
+        .btn-outline:hover { background-color: var(--white); color: var(--primary-green); }
 
-        .btn-main, .btn-outline { 
-            display: inline-block; padding: 12px 30px; text-decoration: none; 
-            border-radius: 50px; font-weight: bold; margin: 10px; font-size: 0.9rem;
-        }
-        .btn-main { background-color: var(--accent-green); color: var(--primary-green); }
-        .btn-outline { border: 2px solid white; color: var(--white); }
+        .leaders-container { padding: 80px 5%; background: #fff; }
+        .leaders-row { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+        .leader-card { background: #f9f9f9; flex: 1; min-width: 300px; max-width: 360px; padding: 40px 25px; border-radius: 25px; text-align: center; border: 1px solid #eee; position: relative; text-decoration: none; color: inherit; display: block; transition: 0.3s; }
+        .leader-card:hover { transform: translateY(-10px); border-color: var(--accent-green); }
+        .card-border-top { position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--primary-green); border-radius: 25px 25px 0 0; }
+        .leader-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 5px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        /* Leaders & Activities (كما هي مع تحسينات بسيطة للتجاوب) */
-        .leaders-container { padding: 60px 5%; background: #fff; }
-        .leaders-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .leader-card { background: #fdfdfd; flex: 1; min-width: 280px; max-width: 350px; padding: 25px; border-radius: 20px; text-align: center; border: 1px solid #eee; }
-        .leader-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-
-        .container { width: 90%; margin: 60px auto; }
-        .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .activity-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-decoration: none; color: inherit; }
-        .main-img, .double-img { height: 200px; width: 100%; object-fit: cover; }
+        .container { width: 88%; margin: 80px auto; }
+        .section-title { font-size: 2rem; color: var(--primary-green); margin-bottom: 50px; border-right: 8px solid var(--accent-green); padding-right: 20px; }
+        .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .activity-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-decoration: none; color: inherit; transition: 0.3s; display: flex; flex-direction: column; }
+        .activity-card:hover { transform: translateY(-5px); }
+        .img-box img, .double-img img { width: 100%; height: 250px; object-fit: cover; }
         .double-img { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+        .activity-info { padding: 25px; flex-grow: 1; }
 
-        footer { background: var(--primary-green); color: white; padding: 30px; text-align: center; }
+        footer { background: #1a3a17; color: white; padding: 40px; text-align: center; border-top: 5px solid var(--accent-green); }
+
+        @media (max-width: 768px) {
+            .hero-content h2 { font-size: 2.2rem; }
+            .hero-btns { flex-direction: column; align-items: center; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-controls">
-            <div class="menu-icon" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
-            </div>
-            <a href="https://2026.pffd.ma/" class="portal-btn">منصة الحوارات المشاركة</a>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
         </div>
-
         <div class="logo-container">
             <img src="https://pffd.ma/wp-content/uploads/2025/04/logo-web-site.png" alt="PFFD Logo" class="main-logo">
             <div class="logo-text">
@@ -147,16 +100,16 @@
                 <span>الأمانة الإقليمية - الفداء مرس السلطان</span>
             </div>
         </div>
-
+        
         <nav id="sideNav">
             <span class="close-btn" onclick="toggleMenu()">&times;</span>
             <ul>
                 <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="https://2026.pffd.ma/" style="color: var(--accent-green);">منصة الحوارات المشاركة</a></li>
+                <li><a href="https://2026.pffd.ma/" target="_blank" style="color: var(--accent-green);">منصة حوارات المشاركة</a></li>
                 <li><a href="about.html">تعريف بالحزب</a></li>
                 <li><a href="gallery.html">معرض الصور</a></li>
-                <li><a href="join.html">انخرط معنا</a></li>
                 <li><a href="contact.html">اتصل بنا</a></li>
+                <li><a href="join.html">انخرط معنا</a></li>
             </ul>
         </nav>
     </header>
@@ -165,45 +118,78 @@
         <div class="hero-bg"></div><div class="hero-overlay"></div>
         <div class="hero-content">
             <h2>مغرب واحد للجميع</h2>
-            <p style="margin-bottom: 20px;">من أجل تنمية محلية شاملة في منطقة الفداء مرس السلطان</p>
-            <a href="#activities" class="btn-main">آخر المستجدات</a>
-            <a href="join.html" class="btn-outline">انخرط معنا</a>
+            <p style="font-size: 1.3rem;">من أجل تنمية محلية شاملة في منطقة الفداء مرس السلطان</p>
+            <div class="hero-btns">
+                <a href="#activities" class="btn-main">اكتشف آخر المستجدات</a>
+                <a href="join.html" class="btn-outline">انخرط معنا</a>
+            </div>
         </div>
     </section>
 
     <section class="leaders-container">
         <div class="leaders-row">
-            <a href="leader1.html" class="leader-card" style="text-decoration: none; color: inherit;">
+            <a href="leader1.html" class="leader-card">
+                <div class="card-border-top"></div>
                 <img src="67.jpeg" class="leader-img">
-                <span style="color:var(--accent-green); font-weight:bold;">القائد المؤسس</span>
+                <span style="color:var(--accent-green); font-weight:bold; display:block; margin-bottom:10px;">القائد المؤسس</span>
                 <h3>المرحوم التهامي الخياري</h3>
                 <p>المرجعية الفكرية والنضالية للحزب.</p>
             </a>
-            <a href="leader2.html" class="leader-card" style="text-decoration: none; color: inherit;">
+            <a href="leader2.html" class="leader-card">
+                <div class="card-border-top"></div>
                 <img src="https://i1.hespress.com/wp-content/uploads/2024/10/El-Mustapha-Benali-front-des-forces-democratiques-Sawab-mauritanie.jpg" class="leader-img">
-                <span style="color:var(--accent-green); font-weight:bold;">الأمين العام</span>
+                <span style="color:var(--accent-green); font-weight:bold; display:block; margin-bottom:10px;">الأمين العام</span>
                 <h3>د. المصطفى بنعلي</h3>
-                <p>يقود مسيرة التجديد الحزبي.</p>
+                <p>يقود مسيرة التجديد داخل الحزب.</p>
             </a>
-            <a href="leader3.html" class="leader-card" style="text-decoration: none; color: inherit;">
+            <a href="leader3.html" class="leader-card">
+                <div class="card-border-top"></div>
                 <img src="WhatsApp_Image_2026-02-18_at_14.46.46-removebg-preview.png" class="leader-img">
-                <span style="color:var(--accent-green); font-weight:bold;">الأمين الإقليمي</span>
+                <span style="color:var(--accent-green); font-weight:bold; display:block; margin-bottom:10px;">الأمين الإقليمي</span>
                 <h3>الأستاذ خالد بهموت</h3>
-                <p>دينامو العمل الميداني بالمنطقة.</p>
+                <p>مؤطر العمل الميداني بالفداء مرس السلطان.</p>
             </a>
         </div>
     </section>
 
     <div class="container" id="activities">
+        <h2 class="section-title">آخر الأنشطة والمستجدات</h2>
         <div class="activities-grid">
-            <div class="activity-card">
-                <img src="What.jpeg" class="main-img">
-                <div style="padding:15px;"><h4>لقاء تواصلي</h4><p>الإنصات لساكنة الفداء مرس السلطان.</p></div>
-            </div>
-            <div class="activity-card">
-                <img src="96887544.jpeg" class="main-img">
-                <div style="padding:15px;"><h4>تعبئة شاملة</h4><p>تقوية هياكل الحزب المحلية.</p></div>
-            </div>
+            <a href="activity1.html" class="activity-card">
+                <div class="img-box"><img src="What.jpeg"></div>
+                <div class="activity-info">
+                    <span style="color: var(--accent-green); font-weight: bold;">19 فبراير 2026</span>
+                    <h4>لقاء تواصلي مفتوح مع ساكنة الفداء مرس السلطان</h4>
+                    <p>الإنصات المباشر لتطلعات المواطنين بمنطقة الفداء...</p>
+                </div>
+            </a>
+            <a href="activity3.html" class="activity-card">
+                <div class="img-box"><img src="96887544.jpeg"></div>
+                <div class="activity-info">
+                    <span style="color: var(--accent-green); font-weight: bold;">10 فبراير 2026</span>
+                    <h4>تعبئة شاملة: وضع اللمسات الأخيرة للقاءات الميدانية</h4>
+                    <p>اجتماع تنظيمي لتطوير هياكل الحزب بالمنطقة...</p>
+                </div>
+            </a>
+            <a href="activity4.html" class="activity-card">
+                <div class="double-img">
+                    <img src="10236.jpg">
+                    <img src="11155898.jpg">
+                </div>
+                <div class="activity-info">
+                    <span style="color: var(--accent-green); font-weight: bold;">23 فبراير 2026</span>
+                    <h4>إحياء ذكرى وفاة فقيد الحزب التهامي الخياري</h4>
+                    <p>وفد برئاسة الأمين العام يحيي ذكرى المؤسس بمقبرة الشهداء...</p>
+                </div>
+            </a>
+            <a href="activity5.html" class="activity-card" style="border: 2px solid var(--accent-green);">
+                <div class="img-box"><img src="https://scontent.frba1-2.fna.fbcdn.net/v/t39.30808-6/643939609_1436721088490275_7902205528745874510_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_ohc=KpsvPlp4-acQ7kNvwE1Q83a&_nc_oc=AdmoEgxnwQ0JQ8S4EaoJdby4V7YxHJtyLCgUOHKzzB5sO0O74ZYsHbGm4lU-aRT1Rho&_nc_zt=23&_nc_ht=scontent.frba1-2.fna&_nc_gid=zVaXoSjZfozRwwptUkIXBA&_nc_ss=8&oh=00_Afswinrhno1FfbTXRl4YvE3lFzyzh_bzpotZ1GPF0vyVQg&oe=69A91428"></div>
+                <div class="activity-info">
+                    <span style="color: var(--primary-green); font-weight: bold;">28 فبراير 2026</span>
+                    <h4>تخليد ذكرى عاشر رمضان بضريح محمد الخامس</h4>
+                    <p>وفد الحزب يترحم على روحي بطلي التحرير والبناء.</p>
+                </div>
+            </a>
         </div>
     </div>
 
