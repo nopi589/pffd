@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جبهة القوى الديمقراطية - الفداء مرس السلطان</title>
     <style>
+        /* ستايل شريط التهنئة الفوقاني */
+.top-bar-announcement {
+    background: var(--accent-green);
+    color: var(--primary-green);
+    padding: 10px 5%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 4000; /* باش يجي فوق كلشي */
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    animation: slideDown 0.5s ease;
+}
+
+.announcement-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.close-bar-btn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    color: var(--primary-green);
+    cursor: pointer;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+/* تعديل للهيدر باش ينزل شوية إلا كان الشريط كاين */
+header {
+    top: 45px; /* هاد القياس كيخلي الهيدر يبان تحت الشريط نيشان */
+}
         :root {
             --primary-green: #2d5a27;
             --accent-green: #8bc34a;
@@ -90,6 +130,12 @@
 </head>
 <body>
 
+    <div id="topAnnouncement" class="top-bar-announcement">
+    <div class="announcement-content">
+        <span>🌸 بمناسبة 8 مارس: نهنئ كافة النساء المغربيات والمناضلات بعيد المرأة 🌸</span>
+        <button onclick="closeTopBar()" class="close-bar-btn">&times;</button>
+    </div>
+</div>
     <header>
         <div class="menu-icon" onclick="toggleMenu()">
             <span></span><span></span><span></span>
@@ -191,6 +237,31 @@
                     <p>وفد الحزب يترحم على روحي بطلي التحرير والبناء.</p>
                 </div>
             </a>
+
+            <a href="activity6.html" class="activity-card">
+                    <div class="img-box">
+        <img src="a.jpg" alt="لقاء حزبي">
+                </div>
+                    <div class="activity-info">
+        <span style="color: var(--accent-green); font-weight: bold;">05 مارس 2026</span>
+        <h4>دينامية تنظيمية متصاعدة لحزب جبهة القوى الديمقراطية في أفق المؤتمر الوطني السابع.
+</h4>
+        <p>.
+في إطار الدينامية التنظيمية المتواصلة...</p>
+                    </div>
+            </a>
+
+            <a href="activity-fida.html" class="activity-card" style="border: 2px solid var(--accent-green);">
+    <div class="img-box">
+        <img src="b.jpg" alt="اجتماع الفداء">
+    </div>
+    <div class="activity-info">
+        <span style="color: var(--accent-green); font-weight: bold;">07 مارس 2026</span>
+        <h4>اجتماع تنظيمي حاسم للأمانة الإقليمية بالفداء</h4>
+        <p>تحضيرات مكثفة لمؤتمر تازة واستراتيجية العمل الميداني بالمنطقة...</p>
+    </div>
+            </a>
+
         </div>
     </div>
 
@@ -199,6 +270,12 @@
     </footer>
 
     <script>
+        function closeTopBar() {
+    const bar = document.getElementById("topAnnouncement");
+    bar.style.display = "none";
+    // كنرجعو الهيدر لبلاصتو الأصلية فاش كيتسد الشريط
+    document.querySelector("header").style.top = "0";
+}
         function toggleMenu() {
             document.getElementById("sideNav").classList.toggle("active");
         }
