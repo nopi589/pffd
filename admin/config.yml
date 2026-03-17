@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: your-username/your-repo-name # اسم حسابك واسم المستودع في GitHub
+  branch: main # أو master حسب الفرع اللي خدام فيه
+  auth_type: implicit # هادي كتهنيك من Git Gateway ديال Netlify
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "activities"
+    label: "الأنشطة"
+    folder: "data/activities"
+    create: true
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "التاريخ", name: "date", widget: "datetime"}
+      - {label: "الصورة", name: "image", widget: "image"}
+      - {label: "الوصف", name: "body", widget: "markdown"}

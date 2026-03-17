@@ -130,11 +130,7 @@ header {
 </head>
 <body>
 
-    <div id="topAnnouncement" class="top-bar-announcement">
-    <div class="announcement-content">
-        <span>🌸 بمناسبة 8 مارس: نهنئ كافة النساء المغربيات والمناضلات بعيد المرأة 🌸</span>
-        <button onclick="closeTopBar()" class="close-bar-btn">&times;</button>
-    </div>
+    
 </div>
     <header>
         <div class="menu-icon" onclick="toggleMenu()">
@@ -265,20 +261,44 @@ header {
         </div>
     </div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+    const SUPABASE_URL = 'رابط_SUPABASE_ديالك';
+    const SUPABASE_KEY = 'الـ_ANON_KEY_ديالك';
+    const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function loadActivities() {
+        const { data: activities, error } = await _supabase
+            .from('activities')
+            .select('*')
+            .order('id', { ascending: false }); // الأحدث هو الأول
+
+        const container = document.getElementById('activities-container');
+        if (activities) {
+            activities.forEach(act => {
+                container.innerHTML += `
+                    <a href="${act.link}" class="activity-card">
+                        <div class="img-box"><img src="${act.image_url}"></div>
+                        <div class="activity-info">
+                            <span style="color: #8bc34a; font-weight: bold;">${act.date}</span>
+                            <h4>${act.title}</h4>
+                            <p>${act.description}</p>
+                        </div>
+                    </a>
+                `;
+            });
+        }
+    }
+    loadActivities();
+</script>
+
+
+
     <footer>
         <p>© 2026 جبهة القوى الديمقراطية - الفداء مرس السلطان</p>
     </footer>
 
-    <script>
-        function closeTopBar() {
-    const bar = document.getElementById("topAnnouncement");
-    bar.style.display = "none";
-    // كنرجعو الهيدر لبلاصتو الأصلية فاش كيتسد الشريط
-    document.querySelector("header").style.top = "0";
-}
-        function toggleMenu() {
-            document.getElementById("sideNav").classList.toggle("active");
-        }
-    </script>
+   
 </body>
 </html>
