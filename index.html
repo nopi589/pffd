@@ -6,25 +6,9 @@
     <title>جبهة القوى الديمقراطية - الفداء مرس السلطان</title>
     <style>
         /* ستايل شريط التهنئة الفوقاني */
-.top-bar-announcement {
-    background: var(--accent-green);
-    color: var(--primary-green);
-    padding: 10px 5%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.95rem;
-    position: relative;
-    z-index: 4000; /* باش يجي فوق كلشي */
-    border-bottom: 2px solid rgba(0,0,0,0.1);
-    animation: slideDown 0.5s ease;
-}
 
-.announcement-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
+
+
 
 .close-bar-btn {
     background: transparent;
@@ -62,7 +46,14 @@ header {
             padding: 20px 5%; z-index: 1000; background: transparent;
         }
 
-        .menu-icon { display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 3001; }
+        .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 4000; /* طلع هادي باش ما تغطيها حتى حاجة */
+    position: relative;
+}
         .menu-icon span { width: 30px; height: 3px; background-color: var(--white); border-radius: 2px; box-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
 
         .logo-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -131,7 +122,6 @@ header {
 <body>
 
     
-</div>
     <header>
         <div class="menu-icon" onclick="toggleMenu()">
             <span></span><span></span><span></span>
@@ -226,7 +216,7 @@ header {
                 </div>
             </a>
             <a href="activity5.html" class="activity-card" style="border: 2px solid var(--accent-green);">
-                <div class="img-box"><img src="https://scontent.frba1-2.fna.fbcdn.net/v/t39.30808-6/643939609_1436721088490275_7902205528745874510_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_ohc=KpsvPlp4-acQ7kNvwE1Q83a&_nc_oc=AdmoEgxnwQ0JQ8S4EaoJdby4V7YxHJtyLCgUOHKzzB5sO0O74ZYsHbGm4lU-aRT1Rho&_nc_zt=23&_nc_ht=scontent.frba1-2.fna&_nc_gid=zVaXoSjZfozRwwptUkIXBA&_nc_ss=8&oh=00_Afswinrhno1FfbTXRl4YvE3lFzyzh_bzpotZ1GPF0vyVQg&oe=69A91428"></div>
+                <div class="img-box"><img src="v.jpg"></div>
                 <div class="activity-info">
                     <span style="color: var(--primary-green); font-weight: bold;">28 فبراير 2026</span>
                     <h4>تخليد ذكرى عاشر رمضان بضريح محمد الخامس</h4>
@@ -258,47 +248,41 @@ header {
     </div>
             </a>
 
+            <a href="activity7.html" class="activity-card" style="border: 2px solid var(--accent-green);">
+    <div class="img-box">
+        <img src="ad.jpeg" alt="عنوان النشاط">
+    </div>
+    <div class="activity-info">
+        <span style="color: var(--accent-green); font-weight: bold;">19 مارس 2026</span>
+        <h4>عنوان النشاط الجديد هنا</h4>
+        <p>اكتب هنا وصفاً مختصراً للنشاط أو اللقاء الميداني...</p>
+    </div>
+            </a>
+
+
         </div>
     </div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-    const SUPABASE_URL = 'رابط_SUPABASE_ديالك';
-    const SUPABASE_KEY = 'الـ_ANON_KEY_ديالك';
-    const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-    async function loadActivities() {
-        const { data: activities, error } = await _supabase
-            .from('activities')
-            .select('*')
-            .order('id', { ascending: false }); // الأحدث هو الأول
-
-        const container = document.getElementById('activities-container');
-        if (activities) {
-            activities.forEach(act => {
-                container.innerHTML += `
-                    <a href="${act.link}" class="activity-card">
-                        <div class="img-box"><img src="${act.image_url}"></div>
-                        <div class="activity-info">
-                            <span style="color: #8bc34a; font-weight: bold;">${act.date}</span>
-                            <h4>${act.title}</h4>
-                            <p>${act.description}</p>
-                        </div>
-                    </a>
-                `;
-            });
-        }
-    }
-    loadActivities();
-</script>
-
-
 
     <footer>
         <p>© 2026 جبهة القوى الديمقراطية - الفداء مرس السلطان</p>
     </footer>
 
-   
+
+<script>
+    function toggleMenu() {
+        const sideNav = document.getElementById("sideNav");
+        // كيشوف واش المنيو فيها "active" ولا لا، ويقلبها
+        sideNav.classList.toggle("active");
+    }
+
+    // هادي اختيارية: كتسد المنيو إلا كليكتي فشي بلاصة برا المنيو
+    window.onclick = function(event) {
+        const sideNav = document.getElementById("sideNav");
+        if (event.target == sideNav) {
+            sideNav.classList.remove("active");
+        }
+    }
+</script>
+ 
 </body>
 </html>

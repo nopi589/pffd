@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إحياء ليلة القدر المباركة - جبهة القوى الديمقراطية</title>
+    <style>
+        :root {
+            --primary-green: #1a3a17; /* خضر غامق كيناسب جو المساجد والليالي القرآنية */
+            --accent-green: #8bc34a;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+            --text-dark: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--light-gray); color: var(--text-dark); line-height: 1.8; }
+
+        header {
+            background: var(--primary-green);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .back-btn { color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; border: 1px solid var(--accent-green); padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
+        .back-btn:hover { background: var(--accent-green); color: var(--primary-green); }
+
+        .article-container { width: 90%; max-width: 900px; margin: 40px auto; background: var(--white); padding: 35px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 8px solid var(--accent-green); }
+        
+        .article-date { color: var(--accent-green); font-weight: bold; display: block; margin-bottom: 10px; font-size: 1.1rem; }
+        .article-title { color: var(--primary-green); font-size: 2rem; margin-bottom: 25px; border-right: 6px solid var(--accent-green); padding-right: 15px; line-height: 1.4; }
+        
+        /* معرض الصور (3 صور متناسقة) */
+        .photo-gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 15px; 
+            margin: 35px 0; 
+        }
+        .photo-gallery img { 
+            width: 100%; 
+            height: 280px; 
+            object-fit: cover; 
+            border-radius: 18px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.4s ease;
+        }
+        .photo-gallery img:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(139, 195, 74, 0.3); }
+
+        .article-content p { margin-bottom: 22px; text-align: justify; font-size: 1.15rem; color: #3d3d3d; }
+        .highlight { color: var(--primary-green); font-weight: bold; }
+
+        footer { background: #0e220c; color: white; padding: 40px; text-align: center; margin-top: 60px; }
+
+        @media (max-width: 600px) {
+            .article-title { font-size: 1.5rem; }
+            .photo-gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span style="font-weight: bold;">بوابة الأنشطة الحزبية</span>
+        <a href="index.html" class="back-btn">← العودة للرئيسية</a>
+    </header>
+
+    <article class="article-container">
+        <span class="article-date">27 رمضان 1447هـ | 17 مارس 2026</span>
+        <h1 class="article-title">حزب جبهة القوى الديمقراطية بالفداء مرس السلطان يحيي ليلة القدر المباركة في أجواء روحانية متميزة</h1>
+
+        <div class="photo-gallery">
+            <img src="ad.jpeg" alt="تلاوات قرآنية في ليلة القدر">
+            <img src="af.jpeg" alt="حضور وازن في الليلة القرآنية">
+            <img src="ar.jpeg" alt="تكريم القراء والشباب">
+        </div>
+
+        <div class="article-content">
+            <p>في أجواء روحانية مفعمة بالإيمان والخشوع، وبمناسبة <span class="highlight">ليلة القدر المباركة</span>، نظم حزب جبهة القوى الديمقراطية بعمالة الفداء مرس السلطان ليلة قرآنية كبرى، عرفت حضورًا وازنًا لعدد من الفاعلين السياسيين والجمعويين، إلى جانب توافد غفير لساكنة المنطقة التي حجت لمشاركة هذه اللحظات الربانية.</p>
+            
+            <p>وقد تميز هذا الحدث الرباني بتلاوات قرآنية عطرة شنف بها قراء متمكنون أسماع الحاضرين، مما أضفى على الأمسية طابعًا قدسياً خاصاً يليق بعظمة هذه الليلة. كما شكلت المناسبة فرصة ذهبية لتعزيز قيم التضامن والتآزر، وترسيخ مكانة الأنشطة الدينية كجسر للتواصل المباشر مع المواطنين.</p>
+            
+            <p>كما شهدت الليلة فقرات متنوعة تخللتها كلمات توجيهية حول فضل ليلة القدر ودور العمل الجمعوي والسياسي في خدمة الصالح العام انطلاقاً من المبادئ الأخلاقية.</p>
+            
+            <p>وتأتي هذه المبادرة الراقية في إطار البرنامج السنوي للحزب وانفتاحه المستمر على محيطه، مؤكداً حرصه الدائم على دعم الأنشطة الهادفة التي تجمع بين البعد الروحي، الثقافي، والاجتماعي.</p>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 جبهة القوى الديمقراطية - الأمانة الإقليمية الفداء مرس السلطان</p>
+    </footer>
+
+</body>
+</html>
