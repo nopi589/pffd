@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المؤتمر الوطني - جبهة القوى الديمقراطية</title>
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --accent-green: #8bc34a;
+            --white: #ffffff;
+            --dark-bg: #1a3a17;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: #f4f7f4; color: #333; line-height: 1.8; }
+
+        header {
+            background: var(--primary-green);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .back-link { color: var(--accent-green); text-decoration: none; font-weight: bold; border: 1px solid var(--accent-green); padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
+        .back-link:hover { background: var(--accent-green); color: white; }
+
+        .container { width: 90%; max-width: 1000px; margin: 50px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        .main-title { color: var(--primary-green); font-size: 2.2rem; margin-bottom: 30px; border-right: 8px solid var(--accent-green); padding-right: 20px; }
+        
+        /* الصورة الرئيسية */
+        .featured-img { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; margin-bottom: 30px; }
+
+        .content-section { font-size: 1.15rem; text-align: justify; }
+        .highlight-box { background: #f9fff9; border-right: 5px solid var(--primary-green); padding: 20px; margin: 25px 0; border-radius: 5px; }
+        
+        /* الستايل الجديد لمعرض الصور الـ 3 */
+        .photo-gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin: 40px 0; 
+        }
+        .photo-gallery img { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .photo-gallery img:hover { transform: scale(1.03); border-color: var(--accent-green); }
+
+        .points-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 30px 0; }
+        .point-item { background: var(--primary-green); color: white; padding: 15px; border-radius: 10px; text-align: center; font-weight: bold; }
+
+        footer { background: var(--dark-bg); color: white; padding: 30px; text-align: center; margin-top: 50px; }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 1.6rem; }
+            .featured-img { height: 250px; }
+            .photo-gallery img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>التغطية الحصرية</h2>
+        <a href="index.html" class="back-link">العودة للرئيسية</a>
+    </header>
+
+    <div class="container">
+        <h1 class="main-title">المؤتمر الوطني للحزب: محطة تنظيمية بارزة لاستشراف آفاق العمل المستقبلي</h1>
+        
+        <img src="g.jpeg" alt="المؤتمر الوطني" class="featured-img">
+
+        <div class="content-section">
+            <p>خلال المؤتمر الوطني لحزب جبهة القوى الديمقراطية، يشكّل هذا الحدث محطة تنظيمية وسياسية بارزة في مسار الحزب، حيث يجتمع المناضلون والمناضلات من مختلف الجهات لتقييم المرحلة السابقة واستشراف آفاق العمل المستقبلي.</p>
+
+            <div class="highlight-box">
+                ويُفتتح المؤتمر عادةً بكلمة ترحيبية تؤكد على أهمية اللحظة السياسية والتنظيمية، تليها مناقشة التقريرين الأدبي والمالي، اللذين يعكسان حصيلة أنشطة الحزب ومواقفه خلال المرحلة المنصرمة، وكذا تدبيره الإداري والمالي.
+            </div>
+
+            <div class="photo-gallery">
+                <img src="gggg.jpeg" alt="جانب من أشغال المؤتمر 1">
+                <img src="gg.jpeg" alt="حضور المناضلين والمناضلات 2">
+                <img src="ggg.jpeg" alt="انتخاب القيادة الجديدة 3">
+            </div>
+
+            <p>كما يشكّل المؤتمر فضاءً للنقاش الديمقراطي حول القضايا الوطنية الراهنة، وعلى رأسها الأوضاع الاجتماعية والاقتصادية، وتحديات غلاء المعيشة، وآفاق الاستحقاقات الانتخابية المقبلة، إضافة إلى سبل تجديد الخطاب السياسي وتعزيز حضور الحزب في المشهد الوطني.</p>
+
+            <ul class="points-list">
+                <li class="point-item">تقييم المرحلة السابقة</li>
+                <li class="point-item">تجديد الهياكل</li>
+                <li class="point-item">تسطير البرنامج القادم</li>
+                <li class="point-item">العدالة الاجتماعية</li>
+            </ul>
+
+            <p>ومن بين المحطات الأساسية كذلك، انتخاب قيادة جديدة أو تجديد الثقة في القيادة الحالية، بما يعكس إرادة المؤتمرين في ضخ دماء جديدة وتقوية الهياكل التنظيمية للحزب. ويختتم المؤتمر أشغاله بالمصادقة على التوصيات والقرارات التي ترسم ملامح المرحلة المقبلة، وتؤكد التزام الحزب بقيم الديمقراطية، والعدالة الاجتماعية، وثقافة التعايش، وخدمة قضايا المواطن.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 جبهة القوى الديمقراطية - الفداء مرس السلطان</p>
+    </footer>
+
+</body>
+</html>
